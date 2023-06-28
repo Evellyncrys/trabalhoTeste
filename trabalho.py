@@ -1,1 +1,30 @@
-{"nbformat":4,"nbformat_minor":0,"metadata":{"colab":{"provenance":[],"authorship_tag":"ABX9TyMd4EdEoK2cCcq4Z3uv10Ki"},"kernelspec":{"name":"python3","display_name":"Python 3"},"language_info":{"name":"python"}},"cells":[{"cell_type":"code","execution_count":63,"metadata":{"id":"5vjs3ANi2AvH","executionInfo":{"status":"ok","timestamp":1687977329540,"user_tz":180,"elapsed":284,"user":{"displayName":"Evellyn Cristiny","userId":"01559989824539250646"}}},"outputs":[],"source":["def calc_conceito(nota11,nota22,nota33):\n","\n","  #nota1=int(input(\" digite sua primeira nota:\"))\n","  if nota11 <0 or nota11 >100:\n","        return 'NULO'\n","\n","\n","  #nota2=int(input(\" digite sua segunda nota:\"))\n","  if nota22 <0 or nota22 >100:\n","      return 'NULO'\n","\n","\n","  #nota3=int(input(\" digite sua terceira nota:\"))\n","  if nota33 <0 or nota33 >100:\n","      return 'NULO'\n","\n","\n","  media=((nota11+nota22+nota33)/3)\n","  #print((nota11+nota22+nota33)/3)\n","\n","  if media >=0 and media<50:\n","    return 'D'\n","  elif media>=50 and media<70:\n","    return 'C'\n","  elif media>=70 and media<90:\n","    return 'B'\n","  elif media >=90 and media<=100:\n","    return 'A'\n","  else:\n","    return 'NULO'\n","\n"]},{"cell_type":"code","source":["def calc_conceito(nota11,nota22,nota33):\n","\n","  #nota1=int(input(\" digite sua primeira nota:\"))\n","  if nota11 <0 or nota11 >100:\n","        return 'NULO'\n","\n","\n","  #nota2=int(input(\" digite sua segunda nota:\"))\n","  if nota22 <0 or nota22 >100:\n","      return 'NULO'\n","\n","\n","  #nota3=int(input(\" digite sua terceira nota:\"))\n","  if nota33 <0 or nota33 >100:\n","      return 'NULO'\n","\n","\n","  media=((nota11+nota22+nota33)/3)\n","  #print((nota11+nota22+nota33)/3)\n","\n","  if media >=0 and media<50:\n","    return 'D'\n","  elif media>=50 and media<70:\n","    return 'C'\n","  elif media>=70 and media<90:\n","    return 'B'\n","  elif media >=90 and media<=100:\n","    return 'A'\n","  else:\n","    return 'NULO'\n","\n","def relatorio_de_erros():\n","  errors = []\n","\n","  # replace assertions by conditions\n","  if not calc_conceito(49.9999,49.9999,49.9999) == \"D\":\n","    errors.append(\"Erro: Conceito retornado errado, se esperava um 'D'\")\n","  if not calc_conceito(50,50,50) == \"C\":\n","    errors.append(\"Erro: Conceito retornado errado, se esperava um 'C'\")\n","  if not calc_conceito(99.9999,99.9999,99.9999) == \"A\":\n","    errors.append(\"Erro: Conceito retornado errado, se esperava um 'A'\")\n","  if not calc_conceito(80,80,80) == \"B\":\n","    errors.append(\"Erro: Conceito retornado errado, se esperava um 'B'\")\n","\n","  # assert no error message has been registered, else print messages\n","  assert not errors, \"errors occured:\\n{}\".format(\"\\n\".join(errors))\n","\n","\n","relatorio_de_erros()\n","print(\"Success, test ran 100% without errors\")"],"metadata":{"colab":{"base_uri":"https://localhost:8080/"},"id":"A0lJBNBtPldS","executionInfo":{"status":"ok","timestamp":1687981049083,"user_tz":180,"elapsed":364,"user":{"displayName":"Evellyn Cristiny","userId":"01559989824539250646"}},"outputId":"1b4476f9-cc9e-46d2-e758-0739151a1273"},"execution_count":69,"outputs":[{"output_type":"stream","name":"stdout","text":["Success, test ran 100% without errors\n"]}]},{"cell_type":"code","source":["def calc_conceito(nota11,nota22,nota33):\n","\n","  #nota1=int(input(\" digite sua primeira nota:\"))\n","  if nota11 <0 or nota11 >100:\n","        return 'NULO'\n","\n","\n","  #nota2=int(input(\" digite sua segunda nota:\"))\n","  if nota22 <0 or nota22 >100:\n","      return 'NULO'\n","\n","\n","  #nota3=int(input(\" digite sua terceira nota:\"))\n","  if nota33 <0 or nota33 >100:\n","      return 'NULO'\n","\n","\n","  media=((nota11+nota22+nota33)/3)\n","  #print((nota11+nota22+nota33)/3)\n","\n","  if media >=0 and media<50:\n","    return 'D'\n","  elif media>=50 and media<70:\n","    return 'C'\n","  elif media>=70 and media<90:\n","    return 'B'\n","  elif media >=90 and media<=100:\n","    return 'A'\n","  else:\n","    return 'NULO'\n","\n","def relatorio_de_erros():\n","  errors = []\n","\n","  # replace assertions by conditions\n","  if not calc_conceito(49.9999,101.000,49.9999) == \"NULO\":\n","    errors.append(\"Erro: Conceito retornado errado, se esperava um 'NULO'\")\n","  if not calc_conceito(-51,50,50) == \"NULO\":\n","    errors.append(\"Erro: Conceito retornado errado, se esperava um 'NULO'\")\n","  if not calc_conceito(999.9999,99.9999,99.9999) == \"NULO\":\n","    errors.append(\"Erro: Conceito retornado errado, se esperava um 'NULO'\")\n","  if not calc_conceito(-10,80,80) == \"NULO\":\n","    errors.append(\"Erro: Conceito retornado errado, se esperava um 'NULO'\")\n","\n","  # assert no error message has been registered, else print messages\n","  assert not errors, \"errors occured:\\n{}\".format(\"\\n\".join(errors))\n","\n","\n","relatorio_de_erros()\n","print(\"Success, test ran 100% without errors\")"],"metadata":{"colab":{"base_uri":"https://localhost:8080/"},"id":"SrDyRyRugukU","executionInfo":{"status":"ok","timestamp":1687981207303,"user_tz":180,"elapsed":267,"user":{"displayName":"Evellyn Cristiny","userId":"01559989824539250646"}},"outputId":"61be9f48-a0de-4d54-9e20-50edee957f31"},"execution_count":74,"outputs":[{"output_type":"stream","name":"stdout","text":["Success, test ran 100% without errors\n"]}]}]}
+def calc_conceito(nota11,nota22,nota33):
+  
+  #nota1=int(input(" digite sua primeira nota:"))
+  if nota11 <0 or nota11 >100:
+        return 'NULO'
+  
+
+  #nota2=int(input(" digite sua segunda nota:"))
+  if nota22 <0 or nota22 >100:
+      return 'NULO'
+  
+
+  #nota3=int(input(" digite sua terceira nota:"))
+  if nota33 <0 or nota33 >100:
+      return 'NULO'
+  
+
+  media=((nota11+nota22+nota33)/3)
+  #print((nota11+nota22+nota33)/3)
+
+  if media >=0 and media<50:
+    return 'D'
+  elif media>=50 and media<70:
+    return 'C'
+  elif media>=70 and media<90:
+    return 'B'
+  elif media >=90 and media<=100:
+    return 'A'
+  else:
+    return 'NULO'
